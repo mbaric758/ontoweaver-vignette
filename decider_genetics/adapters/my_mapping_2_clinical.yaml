@@ -1,0 +1,33 @@
+row: # The meaning of an entry in the input table.
+   map:
+      column: Patient #column name in your CSV
+      to_subject: Patient #ontology node type to use for representing a row (should it be what we call 'label' in the schema_config, right? Not necessarily the BioLink class)
+
+transformers:
+   - map:
+      column: Age
+      to_property:
+         age
+      for_object:
+         Patient
+   
+   - map:
+      column: BMI
+      to_property:
+         bmi
+      for_object:
+         Patient
+
+   - map:
+      column: Stage
+      to_property:
+         stage
+      for_object:
+         Patient
+
+   - map:
+      column: Treatment
+      to_property:
+         treatment
+      for_object:
+         Patient

@@ -1,0 +1,30 @@
+row: # The meaning of an entry in the input table.
+   rowIndex: 
+      to_subject: CopyNumberAlteration #ontology node type to use for representing a row
+
+transformers:
+   -map:
+      column: sample
+      to_object: Patient
+      via_relation: PatientToCopyNumberAlterationAssociation # Subject and object should be the other way around, but 1) apparently biocypher has no way to declare inverse property, 2) it's not clear to me if and why (conceptually) we shouldn't be able to treat rowIndex as object and another column has suject (other than forcing the user to always have a subject when they define the mapping).
+
+   -map:
+      column: Gene
+      to_object: Gene
+      via_relation: CopyNumberAlterationToGeneAssociation
+
+   -map:
+      column: chr
+      to_property: chr
+      for_object: Gene
+   
+   -map:
+      column: nMajor
+      to_property: nMajor
+      for_object: CopyNumberAlteration
+   
+   -map:
+      column: nMinor
+      to_property: nMinor
+      for_object: CopyNumberAlteration
+

@@ -1,0 +1,65 @@
+
+sequence variant: # The type in Biolink
+    represented_as: node
+    label_in_input: SequenceVariant
+    properties:
+        CHROM: str
+        POS: int
+        REF: str
+        ALT: str
+
+# Another node type (e.g. of a column of the table).
+patient: # Existing in Biolink under another name.
+    represented_as: node
+    label_in_input: Patient
+    synonym_for: case # Actual name in Biolink.
+    properties:
+        name: str
+        age: int
+        bmi: float
+        stage: str
+        treatment: str
+
+patient has variant: # Not existing in Biolink…
+    # … thus added by Biocypher under:
+    is_a: case to phenotypic feature association
+    represented_as: edge
+    label_in_input: PatientToSequenceVariantAssociation
+    source: patient
+    target: sequence variant
+
+gene: # The type in Biolink
+  represented as: node
+  label in input: Gene
+  properties:
+    version: str
+    chr: str
+
+variant to gene association: #The type in BioLink
+    represented_as: edge
+    label_in_input: SequenceVariantToGeneAssociation
+    source: sequence variant
+    target: gene
+
+copy number alteration: 
+  is_a: genomic entity
+  represented as: node
+  label in input: CopyNumberAlteration
+  properties:
+    nMajor: float
+    nMinor: float
+
+patient has copy number alteration: # Not existing in Biolink…
+    # … thus added by Biocypher under:
+    is_a: case to phenotypic feature association
+    represented_as: edge
+    label_in_input: PatientToCopyNumberAlterationAssociation
+    source: patient
+    target: copy number alteration
+
+copy number alteration to gene association: # Not existing in BioLink
+    is_a: sequence feature relationship
+    represented_as: edge
+    label_in_input: CopyNumberAlterationToGeneAssociation
+    source: copy number alteration
+    target: gene
