@@ -29,8 +29,8 @@ patient has variant: # Not existing in Biolink…
     target: sequence variant
 
 gene: # The type in Biolink
-  represented as: node
-  label in input: Gene
+  represented_as: node
+  label_in_input: Gene
   properties:
     version: str
     chr: str
@@ -43,8 +43,8 @@ variant to gene association: #The type in BioLink
 
 copy number alteration: 
   is_a: genomic entity
-  represented as: node
-  label in input: CopyNumberAlteration
+  represented_as: node
+  label_in_input: CopyNumberAlteration
   properties:
     nMajor: float
     nMinor: float

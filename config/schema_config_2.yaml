@@ -2,11 +2,11 @@
 sequence variant: # The type in Biolink
     represented_as: node
     label_in_input: SequenceVariant
-    #properties:
-        #CHROM: str
-        #POS: int
-        #REF: str
-        #ALT: str
+    properties:
+        CHROM: str
+        POS: int
+        REF: str
+        ALT: str
 
 # Another node type (e.g. of a column of the table).
 patient: # Existing in Biolink under another name.
@@ -29,8 +29,8 @@ patient has variant: # Not existing in Biolink…
     target: sequence variant
 
 gene: # The type in Biolink
-  represented as: node
-  label in input: Gene
+  represented_as: node
+  label_in_input: Gene
 
 variant to gene association: #The type in BioLink
     represented_as: edge

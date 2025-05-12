@@ -9,10 +9,6 @@ patient: # Existing in Biolink under another name.
     label_in_input: Patient
     synonym_for: case # Actual name in Biolink.
 
-gene: # The type in Biolink
-  represented_as: node
-  label_in_input: Gene
-
 patient has variant: # Not existing in Biolink…
     # … thus added by Biocypher under:
     is_a: case to phenotypic feature association
@@ -20,6 +16,10 @@ patient has variant: # Not existing in Biolink…
     label_in_input: PatientToSequenceVariantAssociation
     source: patient
     target: sequence variant
+
+gene: # The type in Biolink
+  represented_as: node
+  label_in_input: Gene
 
 variant to gene association: #The type in BioLink
     represented_as: edge

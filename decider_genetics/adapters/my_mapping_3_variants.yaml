@@ -1,6 +1,12 @@
 row:
-   rowIndex:
+   cat_format: # Here I posit that those 4 properties are necessary and sufficient to universally identify a sequence variant (in the context of our schema) thus I promote their concatenation to ID 
+      columns:
+       - CHROM 
+       - POS
+       - REF
+       - ALT
       to_subject: SequenceVariant
+      format_string: "SV_{CHROM}:{POS}_{REF}>{ALT}"
 transformers:
     - map:
         columns:
@@ -11,7 +17,7 @@ transformers:
     - map:
         columns:
             - Gene.MANE
-        to_object: gene
+        to_object: Gene
         via_relation: SequenceVariantToGeneAssociation
 
     - map:

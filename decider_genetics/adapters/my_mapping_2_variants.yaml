@@ -3,7 +3,7 @@ row:
       to_subject: SequenceVariant
 transformers:
     - map:
-        columns:
+        columns: 
             - patient
         to_object: Patient
         via_relation: PatientToSequenceVariantAssociation # but isn't the direction flipped w.r.t. semantic definition of this predicate? Doesn't this create problems when querying?
@@ -11,7 +11,7 @@ transformers:
     - map:
         columns:
             - Gene.MANE
-        to_object: gene
+        to_object: Gene
         via_relation: SequenceVariantToGeneAssociation
 
     - map:
@@ -30,7 +30,4 @@ transformers:
         column: ALT
         to_property: ALT
         for_object: SequenceVariant
-
-    
-
 
