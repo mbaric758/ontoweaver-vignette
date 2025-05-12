@@ -1,0 +1,11 @@
+row:
+   rowIndex:
+      to_object: SequenceVariant
+
+transformers:
+    - map:
+        column: patient
+        to_subject: Patient
+        via_relation: PatientToSequenceVariantAssociation
+
+
