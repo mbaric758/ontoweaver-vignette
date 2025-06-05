@@ -1,14 +1,15 @@
 row:
    rowIndex:
-      to_subject: SequenceVariant
+      to_object: SequenceVariant
 transformers:
     - map:
         column: patient
-        to_object: Patient
+        to_subject: Patient
         via_relation: PatientToSequenceVariantAssociation # but isn't the direction flipped w.r.t. semantic definition of this predicate? Doesn't this create problems when querying?
 
     - map:
         columns: Gene.MANE
+        from_subject: SequenceVariant
         to_object: Gene
         via_relation: SequenceVariantToGeneAssociation
 
