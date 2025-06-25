@@ -1,23 +1,16 @@
 [tool.poetry]
-name = "decider-genetics"
+name = "ontoweaver-vignette"
 version = "0.0.1"
 description = "OntoWeaver Vignette."
-authors = ["Emanuele Quaglio <emanuele.quaglio@pasteur.fr>, Matthieu Najm <matthieu.najm@pasteur.fr>"]
+authors = ["Emanuele Quaglio <emanuele.quaglio@pasteur.fr>", "Matthieu Najm <matthieu.najm@pasteur.fr>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 biocypher = "^0.9.3"
-ontoweaver = "^0.2.1"
-pooch = "^1.7.0"
+ontoweaver = "^0.2.3"
 pandas = "^2.0.1"
-owlready2 = "^0.47"
-pyarrow = "^19.0.1"
-numpy = "^2.2.0"
-ipykernel = "^6.29.5"
-matplotlib = "^3.10.0"
-polars = "^1.22.0"
-seaborn = "^0.13.2"
+notebook = "^7.4.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
@@ -26,15 +19,3 @@ sphinx_rtd_theme = "^3.0.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.pytest.ini_options]
-addopts = [
-    "--import-mode=importlib",
-]
-pythonpath = "src"
-testpaths = [
-    "tests",
-]
-
-[tool.poetry.scripts]
-ontoweave = "ontoweaver.ontoweave:main"
