@@ -10,27 +10,39 @@ alteration:
     label_in_input: alteration
     properties:
         mutation_effect_description: str
+        name: str
 
 disease:
     represented_as: node
     label_in_input: disease
+    properties:
+        name: str
 
 drug:
     represented_as: node
     label_in_input: drug
+    properties:
+        name: str
+
 gene:
     represented_as: node
     label_in_input: gene
+    properties:
+        name: str
 
 patient:
     represented_as: node
     label_in_input: patient
     synonym_for: case
+    properties:
+        name: str
 
 sample:
     is_a: material sample
     respresented_as: node
     label_in_input: sample
+    properties:
+        name: str
 
 ########################
 # EDGES
@@ -48,6 +60,8 @@ carries:
     is_a: causes
     represented_as: edge
     label_in_input: carries
+    properties:
+        name: str
 
 patient carries sample:
     is_a: carries
@@ -55,6 +69,8 @@ patient carries sample:
     label_in_input: patient_carries_sample
     source: patient
     target: sample
+    properties:
+        name: str
 
 sample carries alteration:
     is_a: carries
@@ -62,6 +78,8 @@ sample carries alteration:
     label_in_input: sample_carries_alteration
     source: sample
     target: alteration
+    properties:
+        name: str
 
 ### BIOMARKER
 
@@ -75,6 +93,8 @@ alteration biomarker for drug:
     label_in_input: alteration_biomarker_for_drug
     source: alteration
     target: drug
+    properties:
+        name: str
 
 ## METADATA
 
@@ -84,6 +104,8 @@ patient has treatment:
     label_in_input: patient_has_treatment
     source: patient
     target: treatment
+    properties:
+        name: str
 
 ### AFFECTS
 
@@ -93,3 +115,5 @@ alteration affects gene:
     label_in_input: alteration_affects_gene
     source: alteration
     target: gene
+    properties:
+        name: str

@@ -61,20 +61,6 @@ sample carries alteration:
     source: sample
     target: alteration
 
-### CAUSES
-
-# A gene is linked to its functional outcome (gain or loss of function),
-# which are represented as nodes, so as to allow a causal path
-# to go through alteration -> gene outcome -> transcript activity.
-# Hence, outcomes have at least two instances:
-# - Gene:GoF, and
-# - Gene:LoF.
-# Same for proteins with:
-# - Transcrit:Active, and
-# - Transcript:Inactive.
-# Incidentally: the source of an edge of type "causes"
-# cannot be an inactive protein.
-
 alteration causes functional outcome:
     is_a: causes
     represented_as: edg
