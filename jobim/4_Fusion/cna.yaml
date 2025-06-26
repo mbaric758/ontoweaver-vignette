@@ -23,3 +23,17 @@ transformers:
         from_subject: alteration
         to_object: gene
         via_relation: alteration_affects_gene
+    - map:
+          columns:
+              - variantSummary
+          to_property:
+              - variant_summary
+          for_objects:
+              - alteration
+    - map:
+          columns:
+              - tumorTypeSummary
+          to_property:
+              - tumor_type_summary
+          for_objects:
+              - alteration
