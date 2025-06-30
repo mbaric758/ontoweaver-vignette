@@ -37,3 +37,6 @@ transformers:
               - tumor_type_summary
           for_objects:
               - alteration
+
+metadata:
+    - name: copy_number_alterations

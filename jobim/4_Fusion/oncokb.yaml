@@ -10,3 +10,6 @@ transformers:
         to_object: drug
         via_relation: alteration_biomarker_for_drug
         substitute: "_"
+
+metadata:
+        - name: oncokb

@@ -36,3 +36,6 @@ transformers:
           to_object: functional_outcome
           format_string: "{hugoSymbol}:{gene_role}"
           via_relation: alteration_causes_functional_outcome
+
+metadata:
+        - name: single_nucleotide_variants
