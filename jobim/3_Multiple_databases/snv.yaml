@@ -31,11 +31,11 @@ transformers:
     - cat_format:
           columns:
               - hugoSymbol
-              - gene_role
+              - outcome
           from_subject: alteration
-          to_object: functional_outcome
-          format_string: "{hugoSymbol}:{gene_role}"
-          via_relation: alteration_causes_functional_outcome
+          to_object: outcome
+          format_string: "{hugoSymbol}:{outcome}"
+          via_relation: alteration_causes_outcome
 
 metadata:
         - name: single_nucleotide_variants
