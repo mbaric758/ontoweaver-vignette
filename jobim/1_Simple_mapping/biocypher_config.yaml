@@ -30,4 +30,4 @@ neo4j:
     # Set to false for using community edition or older versions of Neo4j
     multi_db: false
 
-    import_call_bin_prefix: ''
+    import_call_bin_prefix: ""
