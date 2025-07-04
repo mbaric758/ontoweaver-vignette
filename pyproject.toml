@@ -7,10 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-biocypher = "^0.9.6"
 ontoweaver = "^0.2.3"
 pandas = "^2.0.1"
 notebook = "^7.4.3"
+biocypher = "^0.9.6"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"

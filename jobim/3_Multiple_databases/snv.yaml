@@ -33,7 +33,7 @@ transformers:
               - hugoSymbol
               - outcome
           from_subject: alteration
-          to_object: outcome
+          to_object: functional_outcome
           format_string: "{hugoSymbol}:{outcome}"
           via_relation: alteration_causes_functional_outcome
 
