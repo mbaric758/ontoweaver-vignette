@@ -2,8 +2,9 @@
 name = "ontoweaver-vignette"
 version = "0.0.1"
 description = "OntoWeaver Vignette."
-authors = ["Emanuele Quaglio <emanuele.quaglio@pasteur.fr>", "Matthieu Najm <matthieu.najm@pasteur.fr>"]
+authors = ["Marko Baric <marko.baric@pasteur.fr>", "Emanuele Quaglio <emanuele.quaglio@pasteur.fr>", "Matthieu Najm <matthieu.najm@pasteur.fr>", ]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
